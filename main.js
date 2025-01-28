@@ -150,7 +150,6 @@ window.addEventListener('load', () => {
 		'trees.mp4',
 	];
 
-	runStaticSvg(1);
 	intervalId = setInterval(() => {
 		state = (state % 4) + 1;
 		document.querySelectorAll('#preload').forEach((video) => video.remove());

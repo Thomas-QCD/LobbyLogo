@@ -35,13 +35,12 @@ function runStaticSvg(version) {
 	video.loop = true;
 	video.muted = true;
 	video.style.width = `99%`;
-	video.style.height = `100%`;
-	video.style.maxHeight = '100';
+	video.style.height = `98%`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
 	video.style.position = 'relative';
-	video.style.bottom = '100%';
+	video.style.bottom = '100.5%';
 	video.style.left = '2px';
 }
 
@@ -139,6 +138,10 @@ function moveLogo() {
 }
 
 window.addEventListener('load', () => {
+	const container = document.getElementById('container');
+	if (container) {
+		container.style.height = `${container.clientWidth / 2.52}px`;
+	}
 	const videoSources = [
 		'waves.mp4',
 		'embers.mp4',

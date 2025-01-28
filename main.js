@@ -35,7 +35,7 @@ function runStaticSvg(version) {
 	video.loop = true;
 	video.muted = true;
 	video.style.width = `${logo.clientWidth + 200}px`;
-	video.style.height = `500px`;
+	video.style.height = `300px`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';

@@ -1,5 +1,5 @@
 const logo = document.getElementById('logo');
-let state = 1;
+let state = 2;
 let x = 0;
 let y = 0;
 let dxFlag = false;
@@ -35,12 +35,12 @@ function runStaticSvg(version) {
 	video.loop = true;
 	video.muted = true;
 	video.style.width = `99%`;
-	video.style.height = `97%`;
+	video.style.height = `calc(100% - 3px)`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
 	video.style.position = 'relative';
-	video.style.bottom = '101%';
+	video.style.bottom = 'calc(100% + 3px)';
 	video.style.left = '2px';
 }
 
@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
 		'snowyroad.mp4',
 		'trees.mp4',
 	];
-
+	runStaticSvg(state);
 	intervalId = setInterval(() => {
 		state = (state % 4) + 1;
 		document.querySelectorAll('#preload').forEach((video) => video.remove());
@@ -160,5 +160,5 @@ window.addEventListener('load', () => {
 		document.body.appendChild(video);
 
 		runStaticSvg(state);
-	}, 6000); // 600000 ms = 10 minutes
+	}, 600000); // 600000 ms = 10 minutes
 });

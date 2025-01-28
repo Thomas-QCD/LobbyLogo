@@ -34,13 +34,13 @@ function runStaticSvg(version) {
 	video.autoplay = true;
 	video.loop = true;
 	video.muted = true;
-	video.style.width = `95%`;
-	video.style.height = `95%`;
+	video.style.width = `${logo.clientWidth + 200}px`;
+	video.style.height = `${logo.clientHeight - 100}px`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
-	video.style.position = 'relative';
-	video.style.bottom = '100%';
+	video.style.position = 'absolute';
+	video.style.bottom = `${centerY}px`;
 	video.style.paddingBottom = '10px';
 	video.style.marginBottom = '10px';
 }

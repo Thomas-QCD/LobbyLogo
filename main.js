@@ -34,8 +34,8 @@ function runStaticSvg(version) {
 	video.autoplay = true;
 	video.loop = true;
 	video.muted = true;
-	video.style.width = `100%`;
-	video.style.height = `100%`;
+	video.style.width = `95%`;
+	video.style.height = `95%`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
@@ -139,7 +139,7 @@ function moveLogo() {
 window.addEventListener('load', () => {
 	const container = document.getElementById('container');
 	if (container) {
-		container.style.height = `${container.clientWidth / 2.52}px`;
+		container.style.height = `${container.clientWidth / 2.04}px`;
 	}
 	const videoSources = [
 		'waves.mp4',

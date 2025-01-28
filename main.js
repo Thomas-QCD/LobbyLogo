@@ -41,6 +41,7 @@ function runStaticSvg(version) {
 	video.style.overflowX = 'hidden';
 	video.style.position = 'relative';
 	video.style.bottom = '100%';
+	video.style.paddingBottom = '10px';
 }
 
 function moveLogo() {

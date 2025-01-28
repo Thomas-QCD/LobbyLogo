@@ -42,6 +42,7 @@ function runStaticSvg(version) {
 	video.style.position = 'relative';
 	video.style.bottom = '100%';
 	video.style.paddingBottom = '10px';
+	video.style.marginBottom = '10px';
 }
 
 function moveLogo() {

@@ -34,14 +34,13 @@ function runStaticSvg(version) {
 	video.autoplay = true;
 	video.loop = true;
 	video.muted = true;
-	video.style.width = `99%`;
-	video.style.height = `calc(100% - 3px)`;
+	video.style.width = `100%`;
+	video.style.height = `100%`;
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
 	video.style.position = 'relative';
-	video.style.bottom = 'calc(100% + 3px)';
-	video.style.left = '2px';
+	video.style.bottom = '100%';
 }
 
 function moveLogo() {

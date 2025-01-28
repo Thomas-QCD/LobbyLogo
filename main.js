@@ -1,5 +1,5 @@
 const logo = document.getElementById('logo');
-let state = 0;
+let state = 1;
 let x = 0;
 let y = 0;
 let dxFlag = false;

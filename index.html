@@ -11,24 +11,30 @@
 				width: 100vw;
 				margin: 0;
 				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		</style>
 	</head>
 	<body>
-		<object
-			id="logo"
-			type="image/svg+xml"
-			data="transparentLogo.svg"
-			width="1200px"
-			height="474px"
-		>
-			<!-- Fallback content if the SVG cannot be displayed -->
-			<img
-				src="logoColor.png"
-				alt="Lobby Logo"
-				style="width: 1200px; position: absolute"
-			/>
-		</object>
+		<div id="container" style="width: 1200px; height: 474px; overflow: hidden">
+			<object
+				id="logo"
+				type="image/svg+xml"
+				data="transparentLogo.svg"
+				width="1200px"
+				height="474px"
+			>
+				<!-- Fallback content if the SVG cannot be displayed -->
+				<img
+					src="logoColor.png"
+					alt="Lobby Logo"
+					style="width: 1200px; position: absolute"
+				/>
+			</object>
+			<video id="background"></video>
+		</div>
 		<script src="main.js"></script>
 	</body>
 </html>

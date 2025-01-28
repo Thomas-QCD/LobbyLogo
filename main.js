@@ -17,8 +17,7 @@ function runDvdEffect() {
 function runStaticSvg(version) {
 	const centerX = (window.innerWidth - logo.clientWidth) / 2;
 	const centerY = (window.innerHeight - logo.clientHeight) / 2;
-	logo.style.transform = `translate(${centerX}px, ${centerY}px)`;
-	const video = document.createElement('video');
+	const video = document.getElementById('background');
 	if (version === 1) {
 		video.src = 'waves.mp4';
 	} else if (version === 2) {
@@ -40,10 +39,10 @@ function runStaticSvg(version) {
 	video.style.left = `${centerX + 2}px`;
 	video.style.width = `1195px`;
 	video.style.height = `470px`;
+	video.style.maxHeight = '470px';
 	video.style.zIndex = '-1';
 	video.style.objectFit = 'cover';
 	video.style.overflowX = 'hidden';
-	document.body.appendChild(video);
 }
 
 function moveLogo() {
@@ -151,8 +150,9 @@ window.addEventListener('load', () => {
 	runStaticSvg(1);
 	intervalId = setInterval(() => {
 		state = (state % 4) + 1;
-		document.querySelectorAll('video').forEach((video) => video.remove());
+		document.querySelectorAll('#preload').forEach((video) => video.remove());
 		const video = document.createElement('video');
+		video.id = 'preload';
 		video.src = videoSources[state];
 		video.style.display = 'none';
 		document.body.appendChild(video);

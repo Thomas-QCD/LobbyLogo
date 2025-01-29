@@ -138,13 +138,6 @@ window.addEventListener('load', () => {
 	runStaticSvg(state);
 	intervalId = setInterval(() => {
 		state = (state % 4) + 1;
-		document.querySelectorAll('#preload').forEach((video) => video.remove());
-		const video = document.createElement('video');
-		video.id = 'preload';
-		video.src = videoSources[state];
-		video.style.display = 'none';
-		document.body.appendChild(video);
-
 		runStaticSvg(state);
-	}, 10000); // 600000 ms = 10 minutes
+	}, 20000); // 600000 ms = 10 minutes
 });

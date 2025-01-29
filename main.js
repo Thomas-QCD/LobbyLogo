@@ -1,5 +1,5 @@
 const logo = document.getElementById('logo');
-let state = 3;
+let state = 0;
 let x = 0;
 let y = 0;
 let dxFlag = false;
@@ -26,6 +26,8 @@ function runStaticSvg(version) {
 		video.src = 'snowyroad.mp4';
 	} else if (version === 5) {
 		video.src = 'trees.mp4';
+	} else if (version === 6) {
+		video.src = 'clouds.mp4';
 	} else {
 		video.src = 'default.mp4'; // Add other versions as needed
 	}
@@ -127,7 +129,11 @@ function moveLogo() {
 	animationFrameId = requestAnimationFrame(moveLogo);
 }
 
+runStaticSvg(5);
 intervalId = setInterval(() => {
-	state = (state % 4) + 1;
+	state++;
+	if (state === 7) {
+		state = 1;
+	}
 	runStaticSvg(state);
-}, 20000); // 600000 ms = 10 minutes
+}, 600000); // 600000 ms = 10 minutes

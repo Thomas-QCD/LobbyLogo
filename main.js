@@ -15,8 +15,6 @@ function runDvdEffect() {
 }
 
 function runStaticSvg(version) {
-	const centerX = (window.innerWidth - logo.clientWidth) / 2;
-	const centerY = (window.innerHeight - logo.clientHeight) / 2;
 	const video = document.getElementById('background');
 	if (version === 1) {
 		video.src = 'waves.mp4';
@@ -34,15 +32,6 @@ function runStaticSvg(version) {
 	video.autoplay = true;
 	video.loop = true;
 	video.muted = true;
-	video.style.width = `${logo.clientWidth + 200}px`;
-	video.style.height = `300px`;
-	video.style.zIndex = '-1';
-	video.style.objectFit = 'cover';
-	video.style.overflowX = 'hidden';
-	video.style.position = 'absolute';
-	video.style.bottom = `${centerY}px`;
-	video.style.paddingBottom = '10px';
-	video.style.marginBottom = '10px';
 }
 
 function moveLogo() {
@@ -139,10 +128,6 @@ function moveLogo() {
 }
 
 window.addEventListener('load', () => {
-	const container = document.getElementById('container');
-	if (container) {
-		container.style.height = `${container.clientWidth / 2.04}px`;
-	}
 	const videoSources = [
 		'waves.mp4',
 		'embers.mp4',
@@ -161,5 +146,5 @@ window.addEventListener('load', () => {
 		document.body.appendChild(video);
 
 		runStaticSvg(state);
-	}, 600000); // 600000 ms = 10 minutes
+	}, 10000); // 600000 ms = 10 minutes
 });

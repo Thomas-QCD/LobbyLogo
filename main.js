@@ -127,17 +127,7 @@ function moveLogo() {
 	animationFrameId = requestAnimationFrame(moveLogo);
 }
 
-window.addEventListener('load', () => {
-	const videoSources = [
-		'waves.mp4',
-		'embers.mp4',
-		'shore2.mp4',
-		'snowyroad.mp4',
-		'trees.mp4',
-	];
+intervalId = setInterval(() => {
+	state = (state % 4) + 1;
 	runStaticSvg(state);
-	intervalId = setInterval(() => {
-		state = (state % 4) + 1;
-		runStaticSvg(state);
-	}, 20000); // 600000 ms = 10 minutes
-});
+}, 20000); // 600000 ms = 10 minutes
